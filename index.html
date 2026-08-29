@@ -1,0 +1,937 @@
+<!-- This is the html file -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css for mobile -->
+    <style>
+/* This is is the css for the mobile devices */
+
+
+*{
+    box-sizing: border-box;
+    font-family: "JetBrains Mono", monospace;
+}
+
+body{
+    margin: 0;
+}
+
+h1{
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+h2{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+a{
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+p{
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.dotted-hr{
+    border: dotted 6px white;
+    border-bottom: none;
+    margin: 20px auto;
+    width: 70px;
+
+}
+
+.skills-container ul li{
+    list-style: square;
+}
+
+span{
+    font-size: 1.4rem;
+    font-weight: bolder;
+}
+
+[class*="col-"]{
+    float: left;
+    padding: 10px;
+}
+
+[class*="col-"]{
+    width: 100%;
+}
+/* 
+nav starts here */
+.navbar{
+    background-color: #353b3b;
+    padding: 1% 7%;
+    text-align: center;
+}
+
+.navbar h1{
+    color: white;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.navbar-menu{
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+   
+}
+
+.navbar-menu a{
+    background-color: #0c6168;
+    border-radius: 10px;
+    margin: 7px;
+    padding: 10px;
+}
+
+.navbar-menu a:hover{
+    background-color: gray;
+}
+
+.navbar::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+/* 
+nav ends here */
+
+/* profile */
+
+.profile{
+    background-color: rgb(214, 207, 207);
+    padding: 130px 10px;
+    position: relative;
+    text-align: center;
+}
+
+.profile .top-weather-icon{
+    position: absolute;
+    right: 60px;
+    top: 20px;
+    transition: transform 2s;
+}
+
+.profile .top-weather-icon:hover{
+    
+    transform: scale(0.9);
+}
+
+
+.profile-desc h1{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 3rem;
+}
+
+.profile-desc p{
+    color: gray;
+    text-align: center;
+    width: 90%;
+    margin: 0px auto 20px auto;
+}
+
+.profile .bottom-weather-icon{
+    position: absolute;
+    left: 60px;
+    bottom: 10px;
+    transition: transform 2s;
+}
+
+.profile .bottom-weather-icon:hover{
+    
+    transform: scale(0.9);
+}
+
+ .profile::after{
+    content: '';
+    display: table;
+    clear: both;
+} 
+
+/* 
+about me */
+
+.about-me{
+    background-color: rgb(49, 47, 47);
+    padding: 1% 7%;
+    color: white;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+
+
+.aboutme-image img{
+    border: 5px solid white;
+    border-radius: 50%;
+    height: 220px;
+    width: 200px;
+}
+
+.about-me p{
+    text-align: center;
+}
+
+.about-me a{
+    font-size: 1.2rem;
+
+}
+
+.cv-button{
+    background-color: rgb(5, 66, 249);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    margin: 10px;
+}
+
+.about-me::after{
+    clear: both;
+    display: table;
+    content: '';
+}
+
+/* 
+about me */
+
+/* professional-experience */
+.experience{
+    padding: 1% 0%;
+}
+
+.experience .card{
+    background-color: #6f735c;
+    border-radius: 5px;
+    padding: 10px;
+    transition: 0.3s;
+    height: 700px; 
+}
+
+.card:hover{
+    box-shadow: 0 4px 8px 5px black;
+}
+
+.card-icon{
+    text-align: center;
+}
+
+.card-icon img{
+    margin-top: 20px;
+    width: 100px;
+}
+
+.rounded-img{
+    border: 5px solid white;
+    border-radius: 50%;
+    padding: 15px;
+}
+
+.card-title h2{
+    background-color: #616161;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.card-desc a{
+    display: block;
+    text-align: center;
+}
+
+.skills-container{
+    padding-right: 45px;
+}
+
+.skills-container li{
+    list-style: none;
+    font-weight: bolder;
+    margin: 30px 10px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.skills-container li::before{
+   content: '';
+   position: absolute;
+   top: calc(100% + 5px);
+   left: 0;
+
+   width: 100%;
+   height: 10px;
+   background-color: rgb(86,86,153,.5);
+   border-radius: 1000px;
+}
+
+.skills-container li::after{
+    content: '';
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+ 
+    width: 0;
+    height: 10px;
+    background-color: rgb(86,86,153,1);
+    border-radius: 1000px;
+
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+ }
+
+ .skills-container li .html::after{
+     animation-name: html;
+ }
+
+ 
+
+ @keyframes html{
+     to{
+         width: 100px;
+     }
+ }
+
+ .skills-container li.css::after{
+    animation-name: css;
+ }
+ 
+ @keyframes css{
+     to{
+         width: 80%;
+     }
+ }
+ 
+ .skills-container li.bootstrap::after{
+     animation-name: bs;
+  }
+  
+  @keyframes bs{
+      to{
+          width: 85%;
+      }
+  }
+ 
+ .skills-container li.js::after{
+    animation-name: js;
+ }
+ 
+ @keyframes js{
+     to{
+         width: 75%;
+     }
+ }
+ 
+ .skills-container li.jquery::after{
+     animation-name: jq;
+  }
+  
+  @keyframes jq{
+      to{
+          width: 80%;
+      }
+  }
+ 
+ 
+ 
+ .skills-container li.node::after{
+    animation-name: none;
+ }
+ 
+ @keyframes node{
+     to{
+         width: 85%;
+     }
+ }
+ 
+ .skills-container li.express::after{
+     animation-name: express;
+  }
+  
+  @keyframes express{
+      to{
+          width: 75%;
+      }
+  }
+ 
+  .skills-container li.git::after{
+     animation-name: github;
+  }
+  
+  @keyframes github{
+      to{
+          width: 75%;
+      }
+  }
+  
+ 
+ .skills-container li.react::after{
+    animation-name: react;
+ }
+ 
+ @keyframes react{
+     to{
+         width: 65%;
+     }
+ }
+ 
+
+
+
+
+.experience::after{
+   clear: both;
+   display: table;
+   content: '';
+}
+
+/* professional-experience */
+
+
+/* achivement */
+.achivement-contact{
+    padding: 1% 7%;
+    background-color: rgb(70, 85, 86);
+    color: white;
+}
+
+.contact{
+    text-align: center;
+}
+
+.contact input, textarea{
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    resize: none;
+}
+
+.contact button{
+    border: none;
+    border-radius: 12px;
+    background-color: rgb(3, 44, 3);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    margin: 10px;
+    width: 100px;
+}
+
+.contact-link{
+    text-align: center;
+}
+
+.media-buttons .btn{
+    
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 32px;
+    padding: 5px;
+    margin: 30px;
+    width: 50px;
+    background: white;
+}
+
+.btn:hover{
+    background-color: gray;
+}
+
+.achivement-contact::after{
+    content: '';
+    display: table;
+    clear: both;
+    align-items: center;
+ }
+
+.achivement {
+    text-align: center;
+}
+
+.achivement a {
+    display: inline-block;
+}
+
+
+/* achivement */
+
+/* footer */
+.footer{
+    margin-top: 100px;
+    background-color: transparent;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+
+}
+
+.footer-menu a{
+
+    font-weight: bolder;
+    text-align: center;
+    display: block;
+    margin: 15px 0;
+    font-size: 1rem;
+}
+
+.footer-menu a:hover{
+    color: gray;
+}
+
+.footer::after{
+    display: table;
+    content: '';
+    clear: both;
+}
+
+
+/* footer */
+    </style>
+
+    <!-- This is google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Satisfy&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+    
+    <!-- This is font awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- css for desktop -->
+    <style media="screen and (min-width:992px)">
+/* This is for the pc or lg-screen devices */
+
+
+
+/* For desktop sizes */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+
+
+.nav-logo{
+    text-align: left;
+
+}
+
+.nav-heading h1{
+    text-align: right;
+}
+
+.navbar-menu{
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.navbar-menu a{
+    padding: 3px 10px;
+    margin: 20px 0;
+    background-color: transparent;
+}
+
+/* profile */
+.profile .top-weather-icon{
+    position: absolute;
+    right: 100px;
+    top: 20px;
+    transition: transform 2s;
+}
+
+.profile .top-weather-icon:hover{
+    
+    transform: scale(0.9);
+}
+
+
+.profile-desc h1{
+    font-family: 'satisfy', cursive; 
+    font-size: 3rem;
+}
+
+.profile-desc p{
+    color: gray;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+
+.profile .bottom-weather-icon{
+    bottom: 20px;
+    position: absolute;
+    left: 100px;
+    bottom: 10px;
+    transition: transform 2s;
+}
+
+.profile .bottom-weather-icon:hover{
+    
+    transform: scale(0.9);
+}
+/* profile */
+
+
+/* about me */
+
+.aboutme-image{
+    margin-top: 100px;
+}
+
+.aboutme-image img{
+   height: 270px;
+   width: 250px;
+}
+
+.aboutme-desc{
+    text-align: left;
+}
+
+/* about me */
+/* pofesional section */
+.profesional-experience{
+    padding: 1% 5%;
+}
+/* pofesional section */
+
+/* achivement */
+.achivement{
+    padding: 50px;
+ }
+
+ .contact button{
+   width: 150px;
+}
+
+.contact-link{
+    
+    position: relative;
+}
+
+.media-button{
+
+    position: absolute;
+    margin-top: 200px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* achivement */
+
+.footer{
+
+    
+    text-align: start;
+    margin: auto;
+}
+
+.footer-menu{
+    margin-top: 12px;
+}
+
+.footer-menu a {
+    border: 1px solid transparent;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: end;
+    display: inline;
+    margin: 10px;
+    
+}
+
+.footer-menu a:hover{
+    background-color: gray;
+    color: aliceblue;
+}
+
+.footer-desc{
+    font-weight: bold;
+    text-align: end;
+}
+    </style>
+
+
+    
+    <title>Md Ahetasamul Rasul</title>
+</head>
+<body>
+
+<!-- nav -->
+
+    <div class="navbar">
+        <div class="nav-logo col-2" >
+            <img src="https://portfoliooptimizer.io/assets/images/88x88.png" alt="">
+        </div>
+        <div class="nav-heading col-4">
+            <h1>Mohammad Ahetasamul Rasul</h1>
+        </div>
+        <div class="navbar-menu col-6">
+            <a href="#profile">Profile</a>
+            <a href="#about-me-id">About me</a>
+            <a href="#xp">My working Experience</a>
+            <a href="#contact">Contact me</a>
+        </div>
+    </div>
+
+
+<!-- nav -->
+
+
+
+<!-- profile  -->
+
+<div class="clear"></div>
+
+<div class="profile">
+    <img class="top-weather-icon" src="https://cdn-icons-png.flaticon.com/128/1163/1163661.png" alt="top weather icon">
+    <div class="profile-desc">
+        <h1> I am a Computer learner <br> & <br> A passionate pianist</h1>
+        <p>Hi! My name is Ahetesamul Rasul. Welcome to my personal page that I’ve designed to showcase my developments and progresses that I’ve accumulated over the year. </p>
+    </div>
+    <img class="bottom-weather-icon" src="https://cdn-icons-png.flaticon.com/128/1163/1163661.png" alt="bottom weather icon">
+</div>
+<!-- profile  -->
+
+<!-- 
+about me  -->
+<div class="about-me" id="about-me-id">
+    <h2>ABOUT ME</h2>
+    <hr class="dotted-hr">       
+    <div class="aboutme-image col-6">
+        <img src="ME:\my_portfolio_md_ahetasamul-main\My-Portfolio-main\MY reposeta\assets\20250503_194424.png" alt="">
+    </div>
+    <div class="aboutme-desc col-6">
+        <p>I like to call myself “a passionate programmer & Web developer ”. </p>
+        <p>I am currently learning programme for satisfying my hunger for coding. I hope this particular attitude might help me in the future for sure.</p> 
+        
+        <hr class="aboutme-hr">
+        <p>Name: MD Ahetasamul</p> 
+        <hr class="aboutme-hr">
+        <p>Address: Mirpur-1, Dhaka</p>
+        <hr class="aboutme-hr">
+        <p>Email: <a href="mailto:turjo0599@gmail.com">turjo0599@gmail.com</a> </p>
+        <hr class="aboutme-hr">
+        <p>Phone: <a href="tel:+880-1799670171">+880-1785898598</a> </p>
+        <hr class="aboutme-hr">
+        <p>Website: <a href="#" target="blank">www.turjo@blogg.com</a> </p>
+        <hr class="aboutme-hr">
+       
+        <p>
+            <a href="#" target="blank" download="#">
+                <button class="cv-button">Download CV</button>
+            </a>
+        </p>
+
+    </div>
+
+</div>
+<!-- 
+about me  -->
+
+<!-- professional experience starts here -->
+<div class="experience" id="xp">
+    <div class="work-experience col-4">
+
+        <div class="card">
+            <div class="card-icon">
+                <img class="rounded-img" src="https://cdn-icons-png.flaticon.com/128/3281/3281289.png" alt="">
+            </div>
+            <div class="card-title">
+                <h2>Work Experience</h2>
+            </div>
+            <div class="card-desc">
+                <ol>
+                    <li>
+                        <strong>Student of Dhaka Residential Model College </strong><br>
+                        05/01/2018-(till now) <br>
+                        Dhaka Residential Model College <br>
+                        Mirpur Road, Dhaka <br> 
+                    </li>
+                    <hr>
+                  
+                    
+                    <li>
+                        <strong>Journey as a Programmer</strong> <br>
+                        I started my programming Journey in 2024, but as a passionate guy. Later, I engaged myself in different teams.<br>
+                    </li>
+                    <hr>
+                    <li>
+                        <strong>Working with team</strong> <br>
+                        I joined Oxygen Robotics in the same year when I started programming for the first time, I met some wonderful people there who made my programming journey even more interesting<br>
+
+                        <br>
+                        <a href="https://www.facebook.com/share/NZ41aJHAhQBbqrSh/?mibextid=qi2Omg" target="blank" style="border: 1px solid #27057d; background-color: #7a99d2; border-radius: 5px;font-size: medium; color: #000000; padding: 10px; align-items: center;">Visit my Facebook</a><br>
+                    </li>
+
+                </ol>
+            </div>
+        </div>
+
+    </div>
+    <div class="education col-4">
+        <div class="card">
+            <div class="card-icon">
+                <img class="rounded-img" src="https://cdn-icons-png.flaticon.com/128/2232/2232688.png" alt="">
+            </div>
+            <div class="card-title">
+                <h2>Life Goals</h2>
+            </div>
+            <div class="card-desc">
+                <ol>
+                    <li>
+                        <strong>I Want To Do Something Impactfull </strong><br>
+                        I want to build a strong community around the world taking the youth into my account and make the world a beutiful place to live <br>
+                    </li>
+                    <hr>
+                    <li>
+                        <strong>Job Plans</strong> <br>
+                        I will the servive the manking, that will be my job. It may not give a handsome salary but I'll be happy.<br>
+                        
+                        
+                    </li>
+                    <hr>
+                    <li>
+                        <strong>Just Code and Code</strong> <br>
+                        Not really great in programming but I really enjoy it.<br>
+                        
+                    </li>
+                    <hr>
+                    <li>
+                        <strong>What will I do next?</strong> <br>
+                        I dunno. Let's see what happens...br>
+                        <br>
+                        
+                       <br>
+                        <a href="https://www.youtube.com/channel/UC6WVZgCXX_nUdm8pQ1TqKRA" target="blank" style="border: 1px solid #27057d; background-color: #dc8684; border-radius: 5px;font-size: medium; color: #000000; padding: 10px; align-items: center;">Visit my YouTube Channel</a><br>
+                    </li>
+
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="skill col-4">
+        <div class="card">
+            <div class="card-icon">
+                <img class="rounded-img" src="https://cdn-icons-png.flaticon.com/128/841/841743.png" alt="">
+            </div>
+            <div class="card-title">
+                <h2>Skills</h2>
+            </div>
+            <div class="card-desc">
+                <div class="skill-container">
+                    <ol>
+                        <li class="html" ><span>HTML</span></li>           <br>
+                        <li class="css"><span>CSS</span></li>              <br>
+                        <li class="python"><span>Python</span></li>   <br>
+                        
+    <li class="some-py-libs"><span>Some other Python Libraries</span></li>   <br>
+
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<!-- professional experience ends here -->
+
+<!-- achivement -->
+<div class="achivement-contact" id="contact">
+    <div class="achivement col-4">
+        <h2>ACHIVEMENTS</h2>
+        <hr class="dotted-hr">
+            <p>1.I am just a passionate programmer, who builds beutiful projects</p>
+            <p>2.I got some prizes in both home and abroad</p>
+            <a href="" style="border: 1px solid #27057d; background-color: #55c5a2; border-radius: 5px;font-size: medium; color: #000000; padding: 10px; align-items: center;">My achivement Gallery</a>
+    </div>
+    <div class="contact col-4">
+        <h2>Let's Get Connected</h2>
+        <hr class="dotted-hr">
+
+        <form action="mailto:turjo0599@gmail.com" method="post" enctype="text/plain">
+            <p><input type="text" placeholder="Your Name" name="name"></p>
+            <p><input type="email" placeholder="Your Email" name="email"></p>
+            <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message Here"></textarea>
+            <button type="submit">SEND</button>
+            <button type="reset">RESET</button>
+        </form>
+    </div>
+    <div class="contact-link col-4">
+        <h2>More ways to Contact</h2>
+        <hr class="dotted-hr">
+
+        <div>
+            <p style="text-align: center;">These are my Social links</p>
+        </div>
+
+        <div style="text-align: center;">
+            <p>Here, it depends on the relativity wheather I am active or not. That's why please don’t message unnecessarily</p>
+        </div>
+
+        <div class="media-buttons">
+            <button class="btn" onclick="window.open('https://www.youtube.com/channel/UC6WVZgCXX_nUdm8pQ1TqKRA')" class="request-callback"><svg viewBox="0 0 24 24" width="24" height="24" fill="#c4302b" aria-hidden="true"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.107-2.117C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.391.524A2.994 2.994 0 0 0 .502 6.186 31.26 31.26 0 0 0 0 12a31.26 31.26 0 0 0 .502 5.814 2.994 2.994 0 0 0 2.107 2.117c1.886.524 9.391.524 9.391.524s7.505 0 9.391-.524a2.994 2.994 0 0 0 2.107-2.117A31.26 31.26 0 0 0 24 12a31.26 31.26 0 0 0-.502-5.814zM9.75 15.568V8.432L15.818 12l-6.068 3.568z"/></svg></button>
+            <button class="btn" onclick="window.open('https://www.facebook.com/share/NZ41aJHAhQBbqrSh/?mibextid=qi2Omg')" class="btn request-callback"><svg viewBox="0 0 24 24" width="24" height="24" fill="#3b5998" aria-hidden="true"><path d="M22.675 0h-21.35C.595 0 0 .595 0 1.325v21.351C0 23.405.595 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.595 1.323-1.325V1.325C24 .595 23.405 0 22.675 0z"/></svg></button>
+            <button class="btn" onclick="window.open('#')" class="btn request-callback"> <span style="font-size: 1.7rem;">&#127760;</span> </button>
+            <button class="btn" onclick="window.open('https://join.skype.com/invite/yUtLOa9i1d7h')" class="btn request-callback"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#3b5998"/><text x="12" y="17" font-size="14" font-weight="bold" text-anchor="middle" fill="white">S</text></svg></button>
+            <button class="btn" onclick="window.open('#')" class="btn request-callback"><svg viewBox="0 0 24 24" width="24" height="24" fill="#3b5998" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.554V9h3.565v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button>
+            <button class="btn" onclick="window.open('//github.com/Ahetasamul1212')" class="btn request-callback"><svg viewBox="0 0 24 24" width="24" height="24" fill="#000000" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></button>
+    </div>
+</div>
+<!-- achivement -->
+
+
+<!-- footer -->
+
+<footer >
+    <div  class="footer">
+        <div class="footer-menu col-6">
+            <a href="#">Home</a>
+            <a href="#about-me-id">About Me</a>
+            <a href="#skill-id">Skill</a>
+            <a href="#contact-id">Contact Me</a>
+        </div>
+    
+        <div class="footer-desc col-6">
+            &copy; turjo 2026. Developed with <span style="color: red; font-size: 1.5rem;">❤</span> by turjo.
+        </div>
+    </div> 
+</footer> 
+
+<!-- footer -->
+
+</body>
+</html>
