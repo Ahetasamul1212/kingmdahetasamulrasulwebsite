@@ -1,4 +1,4 @@
-<img width="585" height="382" alt="image" src="https://github.com/user-attachments/assets/9fead6a5-fcf7-44de-b6fe-74bb55e16198" />Hi, I'm Mohammad Ahetasamul Rasul, a passionate programmer and curious person. I am always ready to try out new things. This personal portfolio project of mine will provide some  basic info regarding my skills, interests, and other things.
+Hi, I'm Mohammad Ahetasamul Rasul, a passionate programmer and curious person. I am always ready to try out new things. This personal portfolio project of mine will provide some  basic info regarding my skills, interests, and other things.
 
 There are segments such as About Me, Portfolio, Skills, Contact, etc which will be a really great way to know me, and if somebody wants, he can also collaborate with me on some other projects. That's why I have given my Facebook, GitHub, and other links as well.
 
